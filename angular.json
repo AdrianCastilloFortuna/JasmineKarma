@@ -29,7 +29,7 @@
             "styles": [
               "src/sass/styles.sass",
               "../node_modules/bootstrap/scss/bootstrap.scss",
-              "../node_modules/bootstrap/scss/main.scss"
+              "../node_modules/bootstrap/scss/min.scss"
             ],
             "scripts": []
           },
@@ -80,7 +80,7 @@
             "styles": [
               "src/sass/styles.sass",
               "../node_modules/bootstrap/scss/bootstrap.scss",
-              "../node_modules/bootstrap/scss/main.scss"
+              "../node_modules/bootstrap/scss/min.scss"
             ],
             "scripts": [],
             "assets": [
