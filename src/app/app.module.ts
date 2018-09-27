@@ -9,10 +9,12 @@ import { NavBarComponent } from '../app/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Material
 import { MaterialModule } from './material';
+import { TablaRegistroComponent } from './tabla-registro/tabla-registro.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    TablaRegistroComponent
   ],
   imports: [
     BrowserModule,
