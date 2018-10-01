@@ -1,13 +1,7 @@
 import { NavBarComponent } from './../nav-bar/nav-bar.component';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../app.component';
-import { componentFactoryName } from '@angular/compiler';
-
-
-
-
 
 const routes: Routes = [
   // {path: ' ', redirectTo: '/home', pathMatch: 'full'},
@@ -20,6 +14,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],
-  declarations: []
+  declarations: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
 })
 export class ComponentsModule { }

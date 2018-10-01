@@ -4,9 +4,9 @@
       <h1 class="text-center">{{title}}</h1>
     </div>
     <div class="col-sm-4">
-      <div class="alert alert-sucess alert-dismissable">
-        <a href="#" class="close">&times;</a>
-        mensaje de aviso
+      <div class="alert alert-sucess alert-dismissable *ngIf='msg'">
+        <a href="#" class="close" (click)="closeAlert()">&times;</a>
+       {{msg}}
       </div>
     </div>
   </div>
@@ -23,14 +23,14 @@
         <div class="form-group">
           <label for="position" class="control-label col-sm-2">Position</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="position" name="name" [(ngModel)]="model.position" placeholder="Enter a new name">
+            <input type="text" class="form-control" id="position" name="name" [(ngModel)]="model.position" placeholder="Enter a new position">
           </div>
         </div>
 
         <div class="form-group">
           <label for="email" class="control-label col-sm-2">Email</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="email" name="name" [(ngModel)]="model.email" placeholder="Enter a new name">
+            <input type="text" class="form-control" id="email" name="name" [(ngModel)]="model.email" placeholder="Enter a new email">
           </div>
         </div>
         <div class="form-group">
@@ -46,31 +46,65 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-7">
       <h2> Read Data</h2>
       <table class="table table-bordered">
-
-        <head>
+        
+      <thead>
           <tr>
             <th>Name</th>
             <th>Position</th>
             <th>Email</th>
             <th>Actions</th>
           </tr>
-        </head>
+        </thead>
         <tbody>
           <tr *ngFor="let employee of Employees; let i = index">
             <td>{{employee.name}}</td>
             <td>{{employee.position}}</td>
             <td>{{employee.email}}</td>
             <td>
-                <button mat-mini-fab (click)="editEmployee(i)" class="tablebuttonsstyle">Edit</button>
-                <button mat-mini-fab color="primary" (click)="deleteEmployee(i)" class="tablebuttonsstyle"> Delete</button>
-              
+              <button mat-mini-fab (click)="editEmployee(i)" class="tablebuttonsstyle">Edit</button>
+              <button mat-mini-fab color="primary" (click)="deleteEmployee(i)" class="tablebuttonsstyle"> Delete</button>
+
             </td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="col-sm-5" [hidden]="hideUpdate">
+      <h2> Update Data:</h2>
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="name" class="control-label col-sm-2">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model2.name" placeholder="Modify the name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="position" class="control-label col-sm-2">Position</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="position" name="position" [(ngModel)]="model2.position" placeholder="Modify the position">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="control-label col-sm-2">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="model2.email" placeholder="Modify the Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <div class="col-sm-10 col-sm-offset-2">
+              <button mat-flat-button color="primary" type="submit" (click)="updateEmployee()">Save Edit Employee</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
     </div>
 
 
