@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,9 +9,9 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
-  })
+  imports: [BrowserModule, FormsModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
 
 export class TablaRegistroComponent implements OnInit {
 
@@ -24,10 +24,9 @@ export class TablaRegistroComponent implements OnInit {
   ];
   model: any = {};
   model2: any = {};
-  myvalue: any;
-  msg: any;
+  msg: String = '';
   hideUpdate = true;
-
+  myvalue;
   addEmployee(): void {
     this.Employees.push(this.model);
     this.model = {};
@@ -60,7 +59,7 @@ export class TablaRegistroComponent implements OnInit {
   }
 
   closeAlert(): void {
-this.msg = '';
+    this.msg = '';
   }
   constructor() { }
 
