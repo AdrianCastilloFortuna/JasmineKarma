@@ -40,11 +40,7 @@ describe('Declared variables for the form', () => {
     expect(tablaRegistroComponent.model2[1]).toBeUndefined(false);
     expect(tablaRegistroComponent.title).toBeDefined(false);
     expect(tablaRegistroComponent.title).toEqual('Tabla de Empleados');
-
-  
-
   });
-
 
 });
 
