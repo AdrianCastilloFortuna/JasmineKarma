@@ -1,3 +1,4 @@
+import { componentFactoryName } from '@angular/compiler';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
@@ -25,3 +26,21 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to Ecorporate!');
   }));
 });
+
+// describe('Test Pruebas', () => {
+//   // con F fijas el foco donde tu elijas saltando las demas pruebas OJO !!!!!!!! fit o fdescribe
+//   it('el valor value debe contener booleano', () => {
+//       // REGLA DE LAS TRES AAA
+//       // Preparar & Arrange
+//       // Actuar & act
+//       expect(value).toContaintoBeTruthy(9);
+//   });
+
+//   it('Esto debería mostrarnos 4', () => {
+//       // Preparar & Arrange
+//       // Actuar & act
+//       const resulttwo = AppComponent.toString("arrow");
+//       // Verificar & assert
+//       expect(resulttwo).toEqual(4);
+//   });
+// });
